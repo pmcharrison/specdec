@@ -28,3 +28,16 @@ test_that("regression test", {
   expect_equal(decayed_offset[[2]], manual_offset_2)
   expect_equal(decayed_offset[[3]], manual_offset_3)
 })
+
+test_that("... propagation", {
+  list(
+    hrep::pi_chord(c(60, 64, 67)),
+    hrep::pi_chord(c(59, 62, 67)),
+    hrep::pi_chord(c(60, 64, 67))
+  ) %>%
+    hrep::vec("pi_chord") %>%
+    spectral_decay(array_dim = 100) %>%
+    purrr::map_int(length) %>%
+    unique %>%
+    expect_equal(100)
+})
