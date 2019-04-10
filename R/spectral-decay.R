@@ -1,3 +1,41 @@
+#' Spectral decay
+#'
+#' Given a chord sequence, this function simulates the accumulation
+#' of acoustic information in sensory memory.
+#'
+#' @details
+#' Chords are represented as objects of class
+#' \code{\link[hrep]{milne_pc_spectrum}}.
+#' The weights of these pitch-class spectra decay
+#' exponentially over time.
+#'
+#' @param x
+#' Chord sequence as created by \code{\link[hrep]{vec}}.
+#' This chord sequence will be coerced to a
+#' \code{\link[hrep]{milne_pc_spectrum}} representation.
+#'
+#' @param half_life
+#' (Numeric scalar)
+#' Half-life of the exponential decay, in units of observations.
+#'
+#' @param offset
+#' (Logical scalar)
+#' If \code{FALSE}, element i of the output vector
+#' corresponds to the accumulated weight
+#' at the timepoint immediately after the onset of chord i.
+#' If \code{TRUE}, element i corresponds to
+#' the accumulated weight at the end of chord i
+#' (i.e. just before chord i + 1).
+#'
+#' @param ...
+#' Arguments passed to \code{\link[hrep]{milne_pc_spectrum}}.
+#'
+#' @return
+#' A vector (\code{\link[hrep]{vec}}) of Milne pitch-class spectra
+#' (\code{\link[hrep]{milne_pc_spectrum}})
+#' produced by accumulating pitch-class spectra over time
+#' with exponential decay.
+#'
 #' @export
 #' @rdname spectral_decay
 spectral_decay <- function(x, half_life = 3, offset = FALSE, ...) {
@@ -7,10 +45,9 @@ spectral_decay <- function(x, half_life = 3, offset = FALSE, ...) {
 #' @export
 #' @rdname spectral_decay
 spectral_decay.default <- function(x, half_life = 3, offset = FALSE, ...) {
-  spectral_decay(hrep::represent(x, "milne_pc_spectrum"),
+  spectral_decay(hrep::represent(x, "milne_pc_spectrum", ...),
                  half_life = half_life,
-                 offset = offset,
-                 ...)
+                 offset = offset)
 }
 
 #' @export
