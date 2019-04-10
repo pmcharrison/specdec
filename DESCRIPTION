@@ -7,3 +7,11 @@ Depends: R (>= 3.4.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    hrep,
+    checkmate,
+    magrittr,
+    purrr
+Suggests: 
+    testthat
+RoxygenNote: 6.1.1
