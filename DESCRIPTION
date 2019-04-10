@@ -8,10 +8,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    hrep,
-    checkmate,
-    magrittr,
-    purrr
+    hrep (>= 0.9.0),
+    checkmate (>= 1.9.1),
+    magrittr (>= 1.5),
+    purrr (>= 0.3.0)
 Suggests: 
-    testthat
+    testthat (>= 2.0.1)
 RoxygenNote: 6.1.1
