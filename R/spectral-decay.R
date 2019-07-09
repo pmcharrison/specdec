@@ -76,8 +76,18 @@ spectral_decay.vec_milne_pc_spectrum <- function(x, half_life = 3, offset = FALS
   }
 }
 
+#' Decay
+#'
+#' Takes a numeric vector and applies exponential decay.
+#'
+#' @param x Numeric vector to decay.
+#'
+#' @param half_lifes (Numeric scalar) The number of half lifes that have elapsed.
+#'
+#' @return A numeric vector.
+#'
 decay <- function(x, half_lifes) {
   checkmate::qassert(x, "N")
-  checkmate::qassert(half_lifes, "N[0,]")
+  checkmate::qassert(half_lifes, "N1[0,]")
   x * 2 ^ (- half_lifes)
 }
