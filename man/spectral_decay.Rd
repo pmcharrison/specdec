@@ -19,7 +19,7 @@ This chord sequence will be coerced to a
 \code{\link[hrep]{milne_pc_spectrum}} representation.}
 
 \item{half_life}{(Numeric scalar)
-Half-life of the exponential decay, in units of observations.}
+Half-life of the exponential decay, in units of chords.}
 
 \item{offset}{(Logical scalar)
 If \code{FALSE}, element i of the output vector
