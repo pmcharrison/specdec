@@ -64,11 +64,11 @@ spectral_decay.vec_milne_pc_spectrum <- function(x, half_life = 3, offset = FALS
     for (i in seq_along(x)) {
       if (offset) {
         x[[i]] <- decay(if (i == 1) x[[i]] else x[[i]] + x[[i - 1L]],
-                        half_lifes = 1 / half_life)
+                        half_lives = 1 / half_life)
 
       } else {
         x[[i]] <- x[[i]] + if (i == 1) 0 else decay(x[[i - 1L]],
-                                                    half_lifes = 1 / half_life)
+                                                    half_lives = 1 / half_life)
 
       }
     }
@@ -82,12 +82,12 @@ spectral_decay.vec_milne_pc_spectrum <- function(x, half_life = 3, offset = FALS
 #'
 #' @param x Numeric vector to decay.
 #'
-#' @param half_lifes (Numeric scalar) The number of half lifes that have elapsed.
+#' @param half_lives (Numeric scalar) The number of half lifes that have elapsed.
 #'
 #' @return A numeric vector.
 #'
-decay <- function(x, half_lifes) {
+decay <- function(x, half_lives) {
   checkmate::qassert(x, "N")
-  checkmate::qassert(half_lifes, "N1[0,]")
-  x * 2 ^ (- half_lifes)
+  checkmate::qassert(half_lives, "N1[0,]")
+  x * 2 ^ (- half_lives)
 }

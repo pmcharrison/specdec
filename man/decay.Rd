@@ -4,12 +4,12 @@
 \alias{decay}
 \title{Decay}
 \usage{
-decay(x, half_lifes)
+decay(x, half_lives)
 }
 \arguments{
 \item{x}{Numeric vector to decay.}
 
-\item{half_lifes}{(Numeric scalar) The number of half lifes that have elapsed.}
+\item{half_lives}{(Numeric scalar) The number of half lifes that have elapsed.}
 }
 \value{
 A numeric vector.
