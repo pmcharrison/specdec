@@ -16,7 +16,7 @@
 #'
 #' @param half_life
 #' (Numeric scalar)
-#' Half-life of the exponential decay, in units of observations.
+#' Half-life of the exponential decay, in units of chords.
 #'
 #' @param offset
 #' (Logical scalar)
