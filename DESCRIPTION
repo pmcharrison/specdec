@@ -1,6 +1,6 @@
 Package: specdec
 Title: Spectral Decay
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: person("Peter", "Harrison", email = "pmc.harrison@gmail.com", role = c("aut", "cre"))
 Description: Applies Milne's spectral algorithms to sequences, incorporating temporal decay.
 Depends: R (>= 3.4.0)
