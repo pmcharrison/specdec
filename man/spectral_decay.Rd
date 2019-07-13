@@ -2,13 +2,16 @@
 % Please edit documentation in R/spectral-decay.R
 \name{spectral_decay}
 \alias{spectral_decay}
-\alias{spectral_decay.default}
+\alias{spectral_decay.vec}
+\alias{spectral_decay.coded_vec}
 \alias{spectral_decay.vec_milne_pc_spectrum}
 \title{Spectral decay}
 \usage{
 spectral_decay(x, half_life = 3, offset = FALSE, ...)
 
-\method{spectral_decay}{default}(x, half_life = 3, offset = FALSE, ...)
+\method{spectral_decay}{vec}(x, half_life = 3, offset = FALSE, ...)
+
+\method{spectral_decay}{coded_vec}(x, ...)
 
 \method{spectral_decay}{vec_milne_pc_spectrum}(x, half_life = 3,
   offset = FALSE, ...)

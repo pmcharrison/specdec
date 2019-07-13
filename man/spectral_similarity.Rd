@@ -2,9 +2,15 @@
 % Please edit documentation in R/spectral-similarity.R
 \name{spectral_similarity}
 \alias{spectral_similarity}
+\alias{spectral_similarity.coded_vec}
+\alias{spectral_similarity.vec}
 \title{Spectral similarity}
 \usage{
 spectral_similarity(x, half_life = 3, ...)
+
+\method{spectral_similarity}{coded_vec}(x, ...)
+
+\method{spectral_similarity}{vec}(x, half_life = 3, ...)
 }
 \arguments{
 \item{x}{Chord sequence as created by \code{\link[hrep]{vec}}.

@@ -21,7 +21,21 @@
 #' The first element is always NA.
 #'
 #' @export
+#'
+#' @rdname spectral_similarity
 spectral_similarity <- function(x, half_life = 3, ...) {
+  UseMethod("spectral_similarity")
+}
+
+#' @export
+#' @rdname spectral_similarity
+spectral_similarity.coded_vec <- function(x, ...) {
+  spectral_similarity(hrep::decode(x), ...)
+}
+
+#' @export
+#' @rdname spectral_similarity
+spectral_similarity.vec <- function(x, half_life = 3, ...) {
   spectra <- hrep::represent(x, "milne_pc_spectrum", ...)
   decay_spectra <- spectral_decay(spectra,
                                   half_life = half_life,

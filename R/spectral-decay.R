@@ -44,10 +44,16 @@ spectral_decay <- function(x, half_life = 3, offset = FALSE, ...) {
 
 #' @export
 #' @rdname spectral_decay
-spectral_decay.default <- function(x, half_life = 3, offset = FALSE, ...) {
+spectral_decay.vec <- function(x, half_life = 3, offset = FALSE, ...) {
   spectral_decay(hrep::represent(x, "milne_pc_spectrum", ...),
                  half_life = half_life,
                  offset = offset)
+}
+
+#' @export
+#' @rdname spectral_decay
+spectral_decay.coded_vec <- function(x, ...) {
+  spectral_decay(hrep::decode(x), ...)
 }
 
 #' @export
